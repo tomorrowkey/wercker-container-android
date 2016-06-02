@@ -38,5 +38,5 @@ RUN echo y | android update sdk --no-ui --force --all --filter "build-tools-23.0
 RUN echo y | android update sdk --no-ui --force --all --filter "android-23,android-22,android-21"
 RUN echo y | android update sdk --no-ui --force --all --filter "extra-android-m2repository,extra-google-google_play_services,extra-google-m2repository"
 
-# Cleanup
+# Clean up
 RUN rm "/usr/local/android-sdk_r$ANDROID_SDK_REVISION-linux.tgz"
