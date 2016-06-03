@@ -15,6 +15,8 @@ RUN git clone https://github.com/sstephenson/ruby-build.git ~/.rbenv/plugins/rub
 
 ENV PATH $PATH:/root/.rbenv/bin
 RUN echo 'eval "$(rbenv init -)"' >> /root/.bashrc
+RUN echo 'eval "$(rbenv init -)"' >> /etc/profile.d/rbenv.sh
+RUN eval "$(rbenv init -)"
 
 RUN rbenv install 2.3.1
 RUN rbenv rehash
@@ -47,4 +49,3 @@ RUN echo y | android update sdk --no-ui --force --all --filter "platform-tools"
 RUN echo y | android update sdk --no-ui --force --all --filter "build-tools-23.0.3,build-tools-23.0.2,build-tools-23.0.1"
 RUN echo y | android update sdk --no-ui --force --all --filter "android-23,android-22,android-21"
 RUN echo y | android update sdk --no-ui --force --all --filter "extra-android-m2repository,extra-google-google_play_services,extra-google-m2repository"
-
