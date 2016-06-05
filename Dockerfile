@@ -37,15 +37,4 @@ RUN echo y | android update sdk --no-ui --force --all --filter "android-23,andro
 RUN echo y | android update sdk --no-ui --force --all --filter "extra-android-m2repository,extra-google-google_play_services,extra-google-m2repository"
 
 # Ruby installation
-RUN apt-get -y install build-essential libssl-dev libreadline-dev
-RUN git clone https://github.com/sstephenson/rbenv.git ~/.rbenv
-RUN git clone https://github.com/sstephenson/ruby-build.git ~/.rbenv/plugins/ruby-build
-
-ENV PATH $PATH:/root/.rbenv/bin
-RUN echo 'eval "$(rbenv init -)"' >> /root/.bashrc
-RUN echo 'eval "$(rbenv init -)"' >> /etc/profile.d/rbenv.sh
-RUN eval "$(rbenv init -)"
-
-RUN rbenv install 2.3.1
-RUN rbenv rehash
-RUN rbenv global 2.3.1
+RUN add-apt-repository -y ppa:brightbox/ruby-ng && apt-get update && apt-get install -y ruby2.3
