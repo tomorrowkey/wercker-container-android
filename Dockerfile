@@ -2,8 +2,7 @@ FROM ubuntu:14.04
 MAINTAINER Tomoki Yamashita <tomorrowkey@gmail.com>
 
 # Upgrade software
-RUN apt-get update -y
-RUN apt-get upgrade -y
+RUN apt-get update -y && apt-get upgrade -y
 
 # Git installation
 RUN apt-get install -y git
@@ -12,8 +11,8 @@ RUN apt-get install -y git
 RUN \
   apt-get install -y software-properties-common curl && \
   add-apt-repository -y ppa:openjdk-r/ppa && \
-	apt-get update && \
-	apt-get install -y openjdk-8-jdk
+  apt-get update && \
+  apt-get install -y openjdk-8-jdk
 ENV JAVA_HOME /usr/lib/jvm/java-8-openjdk-amd64
 
 # Android SDK Installation
