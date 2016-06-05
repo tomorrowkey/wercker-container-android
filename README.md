@@ -18,8 +18,18 @@ build:
                 ./gradlew --full-stacktrace -q --project-cache-dir=$WERCKER_CACHE_DIR clean build
 ```
 
+# OS
+Ubuntu 14.04
+
+# Packages
+
+- Git
+- OpenJDK 8
+- Android SDK r24.4.1
+- Ruby 2.3
+
 # Development
-Build and run docker image on your environment
+Build and run docker image on your environment with following commands
 
 ## Build
 ```bash
