@@ -8,14 +8,13 @@ RUN apt-get upgrade -y
 # Git installation
 RUN apt-get install -y git
 
-# Java8 installation
+# Open JDK8 installation
 RUN \
   apt-get install -y software-properties-common curl && \
-  add-apt-repository -y ppa:webupd8team/java && \
-  apt-get update -y && \
-  echo oracle-java8-installer shared/accepted-oracle-license-v1-1 select true | debconf-set-selections && \
-  apt-get install -y oracle-java8-installer
-ENV JAVA_HOME /usr/lib/jvm/java-8-oracle
+  add-apt-repository -y ppa:openjdk-r/ppa && \
+	apt-get update && \
+	apt-get install -y openjdk-8-jdk
+ENV JAVA_HOME /usr/lib/jvm/java-8-openjdk-amd64
 
 # Android SDK Installation
 ENV ANDROID_SDK_REVISION r24.4.1
