@@ -35,5 +35,5 @@ RUN echo y | android update sdk --no-ui --force --all --filter "android-23,andro
 RUN echo y | android update sdk --no-ui --force --all --filter "extra-android-m2repository,extra-google-google_play_services,extra-google-m2repository"
 
 # Ruby installation
-RUN add-apt-repository -y ppa:brightbox/ruby-ng && apt-get update && apt-get install -y ruby2.3
+RUN add-apt-repository -y ppa:brightbox/ruby-ng && apt-get update && apt-get install -y ruby2.3 ruby2.3-dev build-essential
 RUN gem install bundler -v 1.12 --no-ri --no-rdoc
