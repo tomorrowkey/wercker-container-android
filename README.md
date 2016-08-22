@@ -3,20 +3,6 @@ wercker-container-android
 
 This is a docker image to build Android app on Wercker CI.
 
-# Usage
-Just write this docker image in your wercker.yml at box section.
-
-```yaml
-box: tomorrowkey/wercker-container-android
-
-build:
-    steps:
-        - script:
-            name: run gradle
-            code: |
-                ./gradlew --full-stacktrace -q --project-cache-dir=$WERCKER_CACHE_DIR clean build
-```
-
 # OS
 Ubuntu 14.04
 
