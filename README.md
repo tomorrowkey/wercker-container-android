@@ -2,7 +2,6 @@ wercker-container-android
 ==================
 
 This is a docker image to build Android app on Wercker CI.
-The docker image is hosted at https://hub.docker.com/r/tomorrowkey/wercker-container-android/
 
 # Usage
 Just write this docker image in your wercker.yml at box section.
